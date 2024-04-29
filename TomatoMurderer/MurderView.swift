@@ -7,7 +7,7 @@
 
 import SwiftUI
 import UniformTypeIdentifiers
-
+import AVFoundation
 
 struct MurderView: View {
     @State private var knifeInContainer: [Knife] = [Knife(image: "knifeOriginal")]
@@ -28,6 +28,7 @@ struct MurderView: View {
                         knifeInContainer.removeAll { $0 == knife }
                     }
                     knifeInVictim += droppedKnives
+                    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                         appState.switchView = .blood
                     }
