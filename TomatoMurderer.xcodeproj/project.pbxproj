@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FF017D2F2BDB8D7800A235A9 /* TomatoMurdererApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF017D2E2BDB8D7800A235A9 /* TomatoMurdererApp.swift */; };
-		FF017D312BDB8D7800A235A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF017D302BDB8D7800A235A9 /* ContentView.swift */; };
+		FF017D312BDB8D7800A235A9 /* MurderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF017D302BDB8D7800A235A9 /* MurderView.swift */; };
 		FF017D332BDB8D7900A235A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF017D322BDB8D7900A235A9 /* Assets.xcassets */; };
 		FF017D362BDB8D7900A235A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF017D352BDB8D7900A235A9 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,9 +16,10 @@
 /* Begin PBXFileReference section */
 		FF017D2B2BDB8D7800A235A9 /* TomatoMurderer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TomatoMurderer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF017D2E2BDB8D7800A235A9 /* TomatoMurdererApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomatoMurdererApp.swift; sourceTree = "<group>"; };
-		FF017D302BDB8D7800A235A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FF017D302BDB8D7800A235A9 /* MurderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurderView.swift; sourceTree = "<group>"; };
 		FF017D322BDB8D7900A235A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF017D352BDB8D7900A235A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FFC699702BDF8349003C4D36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +52,9 @@
 		FF017D2D2BDB8D7800A235A9 /* TomatoMurderer */ = {
 			isa = PBXGroup;
 			children = (
+				FFC699702BDF8349003C4D36 /* Info.plist */,
 				FF017D2E2BDB8D7800A235A9 /* TomatoMurdererApp.swift */,
-				FF017D302BDB8D7800A235A9 /* ContentView.swift */,
+				FF017D302BDB8D7800A235A9 /* MurderView.swift */,
 				FF017D322BDB8D7900A235A9 /* Assets.xcassets */,
 				FF017D342BDB8D7900A235A9 /* Preview Content */,
 			);
@@ -137,7 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF017D312BDB8D7800A235A9 /* ContentView.swift in Sources */,
+				FF017D312BDB8D7800A235A9 /* MurderView.swift in Sources */,
 				FF017D2F2BDB8D7800A235A9 /* TomatoMurdererApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +276,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TomatoMurderer/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TomatoMurderer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -286,9 +289,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nwm.TomatoMurderer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,6 +309,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TomatoMurderer/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TomatoMurderer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -314,9 +322,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nwm.TomatoMurderer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
