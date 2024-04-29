@@ -11,7 +11,7 @@ import SwiftUI
 struct TomatoMurdererApp: App {
     var body: some Scene {
         WindowGroup {
-            MurderView()
+            GameView()
         }
     }
 }

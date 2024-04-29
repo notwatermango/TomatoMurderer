@@ -1,48 +1,38 @@
 //
-//  ContentView.swift
+//  HideKnifeView.swift
 //  TomatoMurderer
 //
-//  Created by mg0 on 26/04/24.
+//  Created by mg0 on 29/04/24.
 //
 
 import SwiftUI
-import UniformTypeIdentifiers
 
-
-struct MurderView: View {
-    @State private var knifeInContainer: [Knife] = [Knife(image: "knifeOriginal")]
-    @State private var knifeInVictim: [Knife] = []
+struct HideKnifeView: View {
+    @State private var knifeInContainer: [Knife] = [Knife(image: "knifeBlood")]
+    @State private var knifeInHiding: [Knife] = []
     
     @State private var isKnifeContainerTargeted = false
     @State private var isVictimTargeted = false
     
-    @EnvironmentObject var appState: AppState
-
     var body: some View {
-        
         VStack {
             KnifeContainerView(knives: knifeInContainer, isTargeted: isKnifeContainerTargeted)
-            VictimContainerView(knives: knifeInVictim, isTargeted: isVictimTargeted)
+            HidingContainerView(knives: knifeInHiding, isTargeted: isVictimTargeted)
                 .dropDestination(for: Knife.self) { droppedKnives, location in
                     for knife in droppedKnives {
                         knifeInContainer.removeAll { $0 == knife }
                     }
-                    knifeInVictim += droppedKnives
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        appState.switchView = .blood
-                    }
+                    knifeInHiding += droppedKnives
                     return true
                 } isTargeted: { isTargeted in
                     isVictimTargeted = isTargeted
                 }
         }
         .padding()
-        
     }
 }
 
-
-struct VictimContainerView: View {
+struct HidingContainerView: View {
     let knives: [Knife]
     let isTargeted: Bool
     
@@ -52,6 +42,7 @@ struct VictimContainerView: View {
                 .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
             //                .foregroundColor(isTargeted ? .teal.opacity(0.15): Color(.secondarySystemFill))
                 .foregroundColor(.clear)
+            // TODO change to
             Image("farmerWithTomatoes")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -70,10 +61,6 @@ struct VictimContainerView: View {
     }
 }
 
-extension UTType {
-    static let knife = UTType(exportedAs: "com.nwm.knife")
-}
-
 #Preview {
-    MurderView()
+    HideKnifeView()
 }
