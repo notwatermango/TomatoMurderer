@@ -18,6 +18,8 @@
 		FFB3F1DB2BDFBEBD00F77079 /* MurdererStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB3F1DA2BDFBEBD00F77079 /* MurdererStartView.swift */; };
 		FFB3F1DD2BDFC31700F77079 /* DetectiveStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB3F1DC2BDFC31700F77079 /* DetectiveStartView.swift */; };
 		FFB3F1DF2BDFC6F100F77079 /* RadarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB3F1DE2BDFC6F100F77079 /* RadarView.swift */; };
+		FFB3F1E12BDFCA4100F77079 /* FindingObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB3F1E02BDFCA4100F77079 /* FindingObjectView.swift */; };
+		FFB3F1E32BDFCA6300F77079 /* EndingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB3F1E22BDFCA6300F77079 /* EndingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		FFB3F1DA2BDFBEBD00F77079 /* MurdererStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurdererStartView.swift; sourceTree = "<group>"; };
 		FFB3F1DC2BDFC31700F77079 /* DetectiveStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectiveStartView.swift; sourceTree = "<group>"; };
 		FFB3F1DE2BDFC6F100F77079 /* RadarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarView.swift; sourceTree = "<group>"; };
+		FFB3F1E02BDFCA4100F77079 /* FindingObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindingObjectView.swift; sourceTree = "<group>"; };
+		FFB3F1E22BDFCA6300F77079 /* EndingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingView.swift; sourceTree = "<group>"; };
 		FFC699702BDF8349003C4D36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +79,8 @@
 				FFB3F1CC2BDF9EC900F77079 /* HideKnifeView.swift */,
 				FFB3F1DC2BDFC31700F77079 /* DetectiveStartView.swift */,
 				FFB3F1DE2BDFC6F100F77079 /* RadarView.swift */,
+				FFB3F1E02BDFCA4100F77079 /* FindingObjectView.swift */,
+				FFB3F1E22BDFCA6300F77079 /* EndingView.swift */,
 				FFB3F1CE2BDF9EFB00F77079 /* Knife.swift */,
 				FF017D322BDB8D7900A235A9 /* Assets.xcassets */,
 				FF017D342BDB8D7900A235A9 /* Preview Content */,
@@ -162,7 +168,9 @@
 			files = (
 				FF017D312BDB8D7800A235A9 /* MurderView.swift in Sources */,
 				FFB3F1DD2BDFC31700F77079 /* DetectiveStartView.swift in Sources */,
+				FFB3F1E32BDFCA6300F77079 /* EndingView.swift in Sources */,
 				FFB3F1CD2BDF9EC900F77079 /* HideKnifeView.swift in Sources */,
+				FFB3F1E12BDFCA4100F77079 /* FindingObjectView.swift in Sources */,
 				FF017D2F2BDB8D7800A235A9 /* TomatoMurdererApp.swift in Sources */,
 				FFB3F1DF2BDFC6F100F77079 /* RadarView.swift in Sources */,
 				FFB3F1D12BDFAFA200F77079 /* BloodView.swift in Sources */,
