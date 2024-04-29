@@ -14,6 +14,7 @@ class AppState: ObservableObject {
         case blood
         case hideKnife
         case murdererStart
+        case detectiveStart
     }
     
     @Published var switchView = CurrentView.murdererStart
@@ -41,6 +42,10 @@ struct GameView: View {
                     .transition(.opacity)
             case .murdererStart:
                 MurdererStartView()
+                    .environmentObject(appState)
+                    .transition(.opacity)
+            case .detectiveStart:
+                DetectiveStartView()
                     .environmentObject(appState)
                     .transition(.opacity)
             }

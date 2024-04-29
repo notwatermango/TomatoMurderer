@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import AVFoundation
+
 
 struct HideKnifeView: View {
     @State private var knifeInContainer: [Knife] = [Knife(image: "knifeBlood")]
@@ -13,6 +15,8 @@ struct HideKnifeView: View {
     
     @State private var isKnifeContainerTargeted = false
     @State private var isVictimTargeted = false
+    
+    @EnvironmentObject var appState: AppState
     
     var body: some View {
         VStack {
@@ -23,6 +27,10 @@ struct HideKnifeView: View {
                         knifeInContainer.removeAll { $0 == knife }
                     }
                     knifeInHiding += droppedKnives
+                    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        appState.switchView = .detectiveStart
+                    }
                     return true
                 } isTargeted: { isTargeted in
                     isVictimTargeted = isTargeted

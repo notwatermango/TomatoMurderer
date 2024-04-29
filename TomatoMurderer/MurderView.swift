@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import UniformTypeIdentifiers
 import AVFoundation
 
 struct MurderView: View {
@@ -69,10 +68,6 @@ struct VictimContainerView: View {
         }
         .padding()
     }
-}
-
-extension UTType {
-    static let knife = UTType(exportedAs: "com.nwm.knife")
 }
 
 #Preview {

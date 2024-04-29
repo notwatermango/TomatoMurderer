@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import UniformTypeIdentifiers
 
 
 // Draggable Item
@@ -45,4 +46,8 @@ struct KnifeContainerView: View {
         }
         .frame(width: 150, height: 150)
     }
+}
+
+extension UTType {
+    static let knife = UTType(exportedAs: "com.nwm.knife")
 }
