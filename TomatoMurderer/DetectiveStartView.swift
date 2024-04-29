@@ -13,7 +13,7 @@ struct DetectiveStartView: View {
     var body: some View {
         VStack {
             Button(action: {
-//                appState.switchView = .murder
+                appState.switchView = .radar
             }) {
                 Image("blueStartButton")
                     .resizable()
