@@ -15,7 +15,7 @@ struct MurdererStartView: View {
             Button(action: {
                 appState.switchView = .murder
             }) {
-                Image("blueStartButton")
+                Image("redStartButton")
                     .resizable()
                     .frame(width: 110, height: 100)
             }
