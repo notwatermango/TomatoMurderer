@@ -133,22 +133,6 @@ struct ARViewContainer : UIViewRepresentable{
         return ARSessionDelegateCoordinator(distance: $distance, showingAlert: $showingAlert, positionX: $positionX, positionY: $positionY, positionZ: $positionZ)
     }
     
-    //    private func addARObject(to arView: ARView) {
-    //        let box = MeshResource.generateBox(size: 0.00000001)
-    //        let material = SimpleMaterial(color: .blue, isMetallic: true)
-    //        let boxEntity = ModelEntity(mesh: box, materials: [material])
-    //
-    //        guard let entity = model.modelEntity else {
-    //            let anchor = AnchorEntity(world: [positionX, positionY, positionZ]) // Position the object 0.5 meters in front of the camera
-    //            anchor.addChild(boxEntity)
-    //            arView.scene.anchors.append(anchor)
-    //            return
-    //        }
-    //
-    //        let anchor = AnchorEntity(world: [positionX, positionY, positionZ]) // Position the object 0.5 meters in front of the camera
-    //        anchor.addChild(entity)
-    //        arView.scene.anchors.append(anchor)
-    //    }
     private func addARObject(to arView: ARView, model: Model3D, positionX: Float, positionY: Float, positionZ: Float) {
         guard let modelEntity = model.modelEntity else {
             // Model not loaded yet, wait for it to load
