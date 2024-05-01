@@ -28,6 +28,9 @@ struct RadarView: View {
                     Text("🎊")
                         .onAppear {
                             playSoundEffect()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                                appState.switchView = .ending
+                            }
                         }
                 }
             } else {
@@ -73,8 +76,8 @@ struct RadarView: View {
     func playSoundEffect() {
         let soundPath = Bundle.main.path(forResource: "yeay.mp3", ofType: nil)!
         let soundURL = URL(fileURLWithPath: soundPath)
-
-
+        
+        
         do {
             yeaySoundEffect = try AVAudioPlayer(contentsOf: soundURL)
             yeaySoundEffect?.play()
@@ -89,9 +92,9 @@ struct ARViewContainer : UIViewRepresentable{
     @Binding var showingAlert: Bool
     @State private var isTapped = false
     
-//    @State private var positionX: Float = Float.random(in: -0.5 ... 0)
-//    @State private var positionY: Float = Float.random(in: -0.5 ... 0)
-//    @State private var positionZ: Float = Float.random(in: -5 ... -3)
+    //    @State private var positionX: Float = Float.random(in: -0.5 ... 0)
+    //    @State private var positionY: Float = Float.random(in: -0.5 ... 0)
+    //    @State private var positionZ: Float = Float.random(in: -5 ... -3)
     
     @State private var positionX: Float = 0
     @State private var positionY: Float = 0
@@ -121,7 +124,7 @@ struct ARViewContainer : UIViewRepresentable{
         
         return arView
     }
-
+    
     
     func updateUIView(_ uiView: ARView, context: Context) {
     }
@@ -130,22 +133,22 @@ struct ARViewContainer : UIViewRepresentable{
         return ARSessionDelegateCoordinator(distance: $distance, showingAlert: $showingAlert, positionX: $positionX, positionY: $positionY, positionZ: $positionZ)
     }
     
-//    private func addARObject(to arView: ARView) {
-//        let box = MeshResource.generateBox(size: 0.00000001)
-//        let material = SimpleMaterial(color: .blue, isMetallic: true)
-//        let boxEntity = ModelEntity(mesh: box, materials: [material])
-//        
-//        guard let entity = model.modelEntity else {
-//            let anchor = AnchorEntity(world: [positionX, positionY, positionZ]) // Position the object 0.5 meters in front of the camera
-//            anchor.addChild(boxEntity)
-//            arView.scene.anchors.append(anchor)
-//            return
-//        }
-//
-//        let anchor = AnchorEntity(world: [positionX, positionY, positionZ]) // Position the object 0.5 meters in front of the camera
-//        anchor.addChild(entity)
-//        arView.scene.anchors.append(anchor)
-//    }
+    //    private func addARObject(to arView: ARView) {
+    //        let box = MeshResource.generateBox(size: 0.00000001)
+    //        let material = SimpleMaterial(color: .blue, isMetallic: true)
+    //        let boxEntity = ModelEntity(mesh: box, materials: [material])
+    //
+    //        guard let entity = model.modelEntity else {
+    //            let anchor = AnchorEntity(world: [positionX, positionY, positionZ]) // Position the object 0.5 meters in front of the camera
+    //            anchor.addChild(boxEntity)
+    //            arView.scene.anchors.append(anchor)
+    //            return
+    //        }
+    //
+    //        let anchor = AnchorEntity(world: [positionX, positionY, positionZ]) // Position the object 0.5 meters in front of the camera
+    //        anchor.addChild(entity)
+    //        arView.scene.anchors.append(anchor)
+    //    }
     private func addARObject(to arView: ARView, model: Model3D, positionX: Float, positionY: Float, positionZ: Float) {
         guard let modelEntity = model.modelEntity else {
             // Model not loaded yet, wait for it to load
@@ -160,7 +163,7 @@ struct ARViewContainer : UIViewRepresentable{
         anchor.addChild(modelEntity)
         arView.scene.anchors.append(anchor)
     }
-
+    
 }
 
 
@@ -190,10 +193,10 @@ class ARSessionDelegateCoordinator : NSObject, ARSessionDelegate {
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
-            if !showingAlert {
-                showingAlert = true
-            }
+        if !showingAlert {
+            showingAlert = true
         }
+    }
 }
 
 #Preview {
