@@ -48,10 +48,9 @@ struct HidingContainerView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 12)
                 .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-            //                .foregroundColor(isTargeted ? .teal.opacity(0.15): Color(.secondarySystemFill))
+//                            .foregroundColor(isTargeted ? .teal.opacity(0.15): Color(.secondarySystemFill))
                 .foregroundColor(.clear)
-            // TODO change to
-            Image("farmerWithTomatoes")
+            Image("room")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             
@@ -60,12 +59,11 @@ struct HidingContainerView: View {
                     Image(knife.image)
                         .resizable()
                         .rotationEffect(Angle(degrees: 180))
-                        .frame(width: 70, height: 150)
+                        .frame(width: 30, height: 75)
                         .draggable(knife)
                 }
             }
         }
-        .padding()
     }
 }
 
