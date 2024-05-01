@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-enum ImageEnum: String {
+enum FarmerImageEnum: String {
     case farmerLayingDown = "farmerLayingDown"
     case farmerBlood = "farmerBlood"
     
-    func next() -> ImageEnum {
+    func next() -> FarmerImageEnum {
         switch self {
         case .farmerBlood: return .farmerBlood
         case .farmerLayingDown: return .farmerBlood
@@ -23,7 +23,7 @@ enum ImageEnum: String {
 struct EndingView: View {
     @State private var fadeOut = false
     @State private var emojiFadeOut = false
-    @State private var img = ImageEnum.farmerLayingDown
+    @State private var img = FarmerImageEnum.farmerLayingDown
     
     @State private var showEmoji = false
     
@@ -52,7 +52,7 @@ struct EndingView: View {
             }
             Image(img.rawValue)
                 .resizable()
-                .frame(width: img == ImageEnum.farmerBlood ? 19*10: 25*10, height: img == ImageEnum.farmerBlood ? 32*10: 25*10)
+                .frame(width: img == FarmerImageEnum.farmerBlood ? 19*10: 25*10, height: img == FarmerImageEnum.farmerBlood ? 32*10: 25*10)
                 .opacity(fadeOut ? 1 : 0)
                 .animation(.easeInOut(duration: 0.25), value: fadeOut)
                 .onAppear(perform: {

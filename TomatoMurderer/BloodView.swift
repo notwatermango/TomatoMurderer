@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct BloodView: View {
     @EnvironmentObject var appState: AppState
@@ -14,15 +15,17 @@ struct BloodView: View {
         ZStack {
             Spacer()
         }
-        .background(.red).ignoresSafeArea()
+        .background(.colorBloodRed)
+        .ignoresSafeArea()
         .onAppear() {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 appState.switchView = .hideKnife
             }
         }
     }
 }
 
-#Preview {
-    BloodView()
-}
+//#Preview {
+//    BloodView()
+//}
