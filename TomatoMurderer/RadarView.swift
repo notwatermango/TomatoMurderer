@@ -40,15 +40,15 @@ struct RadarView: View {
                 
                 VStack {
                     Spacer()
-                    if distance < 0.5 {
+                    if distance < 0.25 {
                         Image("radioThree")
                             .resizable()
                             .frame(width: 200, height: 200)
-                    } else if distance < 1 {
+                    } else if distance < 0.5 {
                         Image("radioTwo")
                             .resizable()
                             .frame(width: 200, height: 200)
-                    } else if distance < 3 {
+                    } else if distance < 1 {
                         Image("radioOne")
                             .resizable()
                             .frame(width: 200, height: 200)
@@ -60,7 +60,7 @@ struct RadarView: View {
                     Spacer()
                     Button(action: {
                         //change the state of the ARViewContainer not hidden
-                        showingCamera.toggle()
+                        showingCamera = true
                     }) {
                         Image(systemName: "camera.viewfinder")
                             .resizable()
@@ -98,9 +98,7 @@ struct ARViewContainer : UIViewRepresentable{
     
     @State private var positionX: Float = 0
     @State private var positionY: Float = 0
-    @State private var positionZ: Float = -0.5
-    
-    var model = Model3D(name: "Knife_kitchen_old")
+    @State private var positionZ: Float = -3
     
     func makeUIView(context: Context) -> ARView {
         let arView = ARView(frame: .zero)
@@ -115,9 +113,7 @@ struct ARViewContainer : UIViewRepresentable{
         arView.session.delegate = context.coordinator
         arView.session.run(config)
         
-        let model = Model3D(name: "Knife_kitchen_old")
-        
-        addARObject(to: arView, model: model, positionX: positionX, positionY: positionY, positionZ: positionZ)
+        addARObject(to: arView, positionX: positionX, positionY: positionY, positionZ: positionZ)
         
         let tapGesture = UITapGestureRecognizer(target: context.coordinator, action: #selector(context.coordinator.handleTap(_:)))
         arView.addGestureRecognizer(tapGesture)
@@ -133,18 +129,13 @@ struct ARViewContainer : UIViewRepresentable{
         return ARSessionDelegateCoordinator(distance: $distance, showingAlert: $showingAlert, positionX: $positionX, positionY: $positionY, positionZ: $positionZ)
     }
     
-    private func addARObject(to arView: ARView, model: Model3D, positionX: Float, positionY: Float, positionZ: Float) {
-        guard let modelEntity = model.modelEntity else {
-            // Model not loaded yet, wait for it to load
-            DispatchQueue.main.async {
-                // Try adding the AR object again after the model is loaded
-                self.addARObject(to: arView, model: model, positionX: positionX, positionY: positionY, positionZ: positionZ)
-            }
-            return
-        }
+    private func addARObject(to arView: ARView, positionX: Float, positionY: Float, positionZ: Float) {
         
-        let anchor = AnchorEntity(world: [positionX, positionY, positionZ]) // Position the object at the specified coordinates
-        anchor.addChild(modelEntity)
+        let entity = try! ModelEntity.load(named: "Knife_kitchen_old.usdz")
+                
+        let position = SIMD3<Float>(positionX, positionY, positionZ)
+        let anchor = AnchorEntity(world: position) // Position the object at the specified coordinates
+        anchor.addChild(entity)
         arView.scene.anchors.append(anchor)
     }
     

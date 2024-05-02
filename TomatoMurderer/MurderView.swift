@@ -44,46 +44,6 @@ struct MurderView: View {
     
     var body: some View {
         ZStack {
-            if showBlood {
-                VStack{
-                    
-                Image(img.rawValue)
-                    .resizable()
-                    .onAppear() {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            withAnimation {
-                                self.img = self.img.next()
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                    withAnimation {
-                                        self.img = self.img.next()
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                            withAnimation {
-                                                self.img = self.img.next()
-                                                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                                    withAnimation {
-                                                        self.img = self.img.next()
-                                                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                                            withAnimation {
-                                                                self.img = self.img.next()
-                                                                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                                                    appState.switchView = .blood
-                                                                        
-                                                                    
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                .ignoresSafeArea()
-            }
             VStack {
                 KnifeContainerView(knives: knifeInContainer, isTargeted: isKnifeContainerTargeted)
                 VictimContainerView(knives: knifeInVictim, isTargeted: isVictimTargeted)
@@ -102,7 +62,46 @@ struct MurderView: View {
                     }
             }
             .padding()
-            
+            if showBlood {
+                VStack{
+                    
+                Image(img.rawValue)
+                    .resizable()
+                    .onAppear() {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            withAnimation {
+                                self.img = self.img.next()
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                    withAnimation {
+                                        self.img = self.img.next()
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                            withAnimation {
+                                                self.img = self.img.next()
+                                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                                    withAnimation {
+                                                        self.img = self.img.next()
+                                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                                            withAnimation {
+                                                                self.img = self.img.next()
+                                                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                                                    appState.switchView = .blood
+                                                                        
+                                                                    
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .ignoresSafeArea()
+            }
             
         }
         

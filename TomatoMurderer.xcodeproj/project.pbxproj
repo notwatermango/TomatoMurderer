@@ -10,6 +10,7 @@
 		239FA7422BE2113300D9938F /* Model3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239FA7412BE2113300D9938F /* Model3D.swift */; };
 		239FA7462BE21FEC00D9938F /* Knife_kitchen_old.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 239FA7432BE21FEB00D9938F /* Knife_kitchen_old.usdz */; };
 		239FA74A2BE2200E00D9938F /* yeay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 239FA7492BE2200E00D9938F /* yeay.mp3 */; };
+		239FA74D2BE2A83600D9938F /* knife_sound_effect.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 239FA74C2BE2A83600D9938F /* knife_sound_effect.mp3 */; };
 		FF017D2F2BDB8D7800A235A9 /* TomatoMurdererApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF017D2E2BDB8D7800A235A9 /* TomatoMurdererApp.swift */; };
 		FF017D312BDB8D7800A235A9 /* MurderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF017D302BDB8D7800A235A9 /* MurderView.swift */; };
 		FF017D332BDB8D7900A235A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF017D322BDB8D7900A235A9 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		239FA7432BE21FEB00D9938F /* Knife_kitchen_old.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Knife_kitchen_old.usdz; sourceTree = "<group>"; };
 		239FA7492BE2200E00D9938F /* yeay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = yeay.mp3; sourceTree = "<group>"; };
 		239FA74B2BE2227200D9938F /* TomatoMurderer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TomatoMurderer.entitlements; sourceTree = "<group>"; };
+		239FA74C2BE2A83600D9938F /* knife_sound_effect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = knife_sound_effect.mp3; sourceTree = "<group>"; };
 		FF017D2B2BDB8D7800A235A9 /* TomatoMurderer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TomatoMurderer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF017D2E2BDB8D7800A235A9 /* TomatoMurdererApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomatoMurdererApp.swift; sourceTree = "<group>"; };
 		FF017D302BDB8D7800A235A9 /* MurderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurderView.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				FFB3F1E22BDFCA6300F77079 /* EndingView.swift */,
 				FFB3F1CE2BDF9EFB00F77079 /* Knife.swift */,
 				239FA7432BE21FEB00D9938F /* Knife_kitchen_old.usdz */,
+				239FA74C2BE2A83600D9938F /* knife_sound_effect.mp3 */,
 				239FA7492BE2200E00D9938F /* yeay.mp3 */,
 				FF017D322BDB8D7900A235A9 /* Assets.xcassets */,
 				FF017D342BDB8D7900A235A9 /* Preview Content */,
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF017D362BDB8D7900A235A9 /* Preview Assets.xcassets in Resources */,
+				239FA74D2BE2A83600D9938F /* knife_sound_effect.mp3 in Resources */,
 				FF017D332BDB8D7900A235A9 /* Assets.xcassets in Resources */,
 				239FA74A2BE2200E00D9938F /* yeay.mp3 in Resources */,
 				239FA7462BE21FEC00D9938F /* Knife_kitchen_old.usdz in Resources */,

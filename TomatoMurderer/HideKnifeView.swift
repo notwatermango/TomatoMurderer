@@ -29,7 +29,10 @@ struct HideKnifeView: View {
                     knifeInHiding += droppedKnives
                     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        appState.switchView = .detectiveStart
+                        knifeInHiding = []
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            appState.switchView = .detectiveStart
+                        }
                     }
                     return true
                 } isTargeted: { isTargeted in
